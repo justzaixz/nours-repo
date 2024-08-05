@@ -1,60 +1,55 @@
 /* For devices with a maximum width of 768px */
 @media only screen and (max-width: 768px) {
-    body {
-        width: 1024px × 768px; /* Adjust the width as needed */
+    .google-image img {
+        width: 80px; /* Adjust the width as needed */
     }
 }
 
 /* For devices with a maximum width of 576px */
 @media only screen and (max-width: 576px) {
-    body {
-        width: 160px * 340px; /* Adjust the width as needed */
+    .google-image img {
+        width: 40px; /* Adjust the width as needed */
     }
 }
 
-        
-        body {
-            margin: 0px;
-            background-color: black;
-            height: 100vh;
-            display: grid;
-            place-items: center;
-            position: relative; /* Add this to make absolute positioning relative to bodys*/
-        }
+body {
+    margin: 0px;
+    background-image: url("https://images.unsplash.com/photo-1484114805781-7e5bdef9cb9d?q=80&w=1901&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    background-size: cover; /* Makes the background image cover the whole screen */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-position: center center; /* Centers the image */
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    position: relative; /* Add this to make absolute positioning relative to body */
+}
 
+.zoom-button {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    position: absolute;
+    bottom: 35%;
+}
 
-
-
-
-        .zoom-button {
-            display: flex;
-            justify-content: center;
-            width: 100%;
-            position: absolute;
-            bottom: 35%;
-        }
-
-
-        .zoom-button button {
+.zoom-button button {
     background-color: white;
     border: none;
     border-radius: 5px;
     padding: 10px 20px;
     cursor: pointer;
     font-size: 2.5vmin;
-    color:white;
+    color: white;
     background-color: black;
-    cursor:pointer;
+    cursor: pointer;
     height: 7vmin;
-    width:7vmin;
-    border: 0.4vmin solid rgb(200,200,200);
+    width: 7vmin;
+    border: 0.4vmin solid rgb(200, 200, 200);
     border-radius: 100%;
     transition: transform 0.3s, box-shadow 0.3s; /* Removed background-color transition */
 }
 
-        
-        
-        .zoom-button button:hover {
+.zoom-button button:hover {
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.5); /* Glow effect */
 }
 
@@ -88,40 +83,68 @@
 .zoom-button button.clicked:hover:after {
     background-color: rgba(255, 255, 255, 0.5); /* Glow effect on pseudo-element */
 }
-    
-    
-    
-    
+
+
+
+
+
+
 .display {
-            width: 500px; /* Adjust width as needed */
-            margin-bottom: 20px; /* Add spacing below search input */
-        }
+    width: 800px; /* Adjust width as needed */
+    margin-bottom: 20px; /* Add spacing below search input */
+    position: absolute;
+    top: 25.5%;
+    background: transparent;
+    border: none; /* Remove border if any */
+    padding: 0; /* Remove padding if any */
+    left: 37%;
+}
 
-        .display input[type="text"] {
-            width: 100%;
-            height: 40px; /* Adjust height as needed */
-            font-size: 16px;
-            padding: 10px;
-            border: 1px solid #dfe1e5; /* Add border similar to Google */
-            border-radius: 24px; /* Make the input rounded */
-            background-color: #fff; /* Set background color for input */
-            outline: none; /* Remove outline on focus */
-        }
-
-        .display input[type="text"]:focus {
-            border-color: #6e6f72; /* Change border color on focus */
-        }
-        
-
-        
+.display::after {
+    content: '';
+    background: linear-gradient(to right, white, black); /* Static gradient from white to black */
+    height: 3px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
 
 
-        
-        
+.display:focus-within::after {
+    background: linear-gradient(to-right, white, black); /* Gradient transition to white */
+}
+
+.display input[type="text"] {
+    width: 100%;
+    height: 40px; /* Adjust height as needed */
+    font-size: 16px;
+    background: transparent;
+    border: none; /* Remove border if any */
+    padding: 0; /* Remove padding if any */
+    color: black;
+}
+
+.display input[type="text"]:focus {
+    outline: none; /* Remove default focus outline */
+}
 
 
 
-    /* Style the select element */
+
+
+
+.google-image {
+    position: absolute;
+    left: 33%; /* changes the distance from the left */
+    top: 25%; /* changes the distance from the top */
+}
+
+.google-image img {
+    width: auto; /* Default width */
+    height: 60px; /* Maintain aspect ratio */
+}
+
 .dropdown select {
     appearance: none; /* Remove default styles */
     -webkit-appearance: none; /* For Safari */
@@ -134,37 +157,22 @@
     cursor: pointer;
 }
 
-/* Style the options within the select element */
 .dropdown select option {
     background-color: black;
     color: white;
 }
 
-/* Style the dropdown container */
 .dropdown {
     margin-bottom: 10px;
 }
 
-    
-    
-
-
-
-
-
-
-.logo-container{
-    top:0%;
-    right:0%;
+.logo-container {
+    top: 0%;
+    right: 0%;
     position: absolute;
-}   
+}
 
 .logo-container img {
-    width: 200px; /* Adjust width as neededs */
-    height: auto; /* Maintain aspect ratios */
+    width: 200px; /* Adjust width as needed */
+    height: auto; /* Maintain aspect ratio */
 }
-    
-    
-    
-    
-   

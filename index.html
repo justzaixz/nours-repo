@@ -6,16 +6,14 @@
     <title>Zain's Browser</title>
     <script src="https://kit.fontawesome.com/2c3dd9402d.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css"> <!-- Linking to external CSS file -->
-
 </head>
 <body>
-
-    <div class = "logo-container">
-        <img src="Zenith-Logo.png">   
+    <div class="logo-container">
+        <img src="Zenith-Logo-removebg-preview.png">   
     </div>
 
     <div class="display">
-        <input type="text" name="searchInput" id="searchInput" placeholder= "Type here to Search">
+        <input type="text" name="searchInput" id="searchInput" placeholder="Type here to Search">
     </div> 
     
     <div class="zoom-button">
@@ -23,14 +21,14 @@
             <i class="fas fa-search"></i>
         </button>
     </div>
-    
-    
 
+    <div class="google-image">
+        <img src="unnamed-removebg.png">
+    </div>
+    
     <script>
         function handleKeyPress(event) { 
-
             let searchInputVar = document.getElementById("searchInput");
-            
             if (searchInputVar.value != "") {
                 if (event.keyCode === 13) { // 13 is the keycode for Enter
                     console.log("Enter key pressed!");
@@ -45,20 +43,15 @@
         function zoomButtonClick() {
             let searchInputVar = document.getElementById("searchInput");
             if (searchInputVar.value != ""){
-            console.log("Zoom Button pressed!");
-            var baseUrl = "https://www.google.com/search?q=";
-            let fullUrl = baseUrl + encodeURIComponent(searchInputVar.value);
-            fullUrl = fullUrl.replace(/\s/g, '%20');
-            window.location.href = fullUrl;
+                console.log("Zoom Button pressed!");
+                var baseUrl = "https://www.google.com/search?q=";
+                let fullUrl = baseUrl + encodeURIComponent(searchInputVar.value);
+                fullUrl = fullUrl.replace(/\s/g, '%20');
+                window.location.href = fullUrl;
+            }
         }
-    }
         
- 
-        
-    
         document.addEventListener("keypress", handleKeyPress);
     </script>
-    
-
 </body>
 </html>
